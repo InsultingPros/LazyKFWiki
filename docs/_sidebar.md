@@ -2,21 +2,28 @@
   * [Welcome](./README.md)
 
 * **Perks**
-  * [**Berserker**](./Berserker.md)
+  * [Berserker](./Berserker.md)
 
-* **Info**
-  * [**Client Config Diffs**](./ClientConfigDiffs.md)
+* **Tweaks**
+  * [Client Config Diffs](./ClientConfigDiffs.md)
+  * [Russian Localization](./russian_kf.md)
+
+* **Workshop**
+  * [Rule of good manners](../Workshop/Workshop_Etiquette.md)
+  * [Current Issues](../Workshop/Workshop_Issues.md)
+  * [How to upload](../Workshop/Workshop_How2.md.md)
+  * [BBCode Template](../Workshop/Workshop_Tmpl.md)
 
 * **Zeds**
-  * ScRaKe
+  * stub ScRaKe
 
 * **Game Mechanics**
-  * Backstabs
+  * [Agro](./Agro.md)
 
 * **Maps**
-  * Hospital Horrors
+  * stub Hospital Horrors
 
 * **Unreal Script**
-  * Setup
-  * Tips and Tricks
-  * Batches
+  * stub Setup
+  * stub Tips and Tricks
+  * stub Batches
