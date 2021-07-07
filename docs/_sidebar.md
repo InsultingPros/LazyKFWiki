@@ -4,6 +4,9 @@
 * **Perks**
   * [**Berserker**](./Berserker.md)
 
+* **Info**
+  * [**Client Config Diffs**](./ClientConfigDiffs.md)
+
 * **Zeds**
   * ScRaKe
 
