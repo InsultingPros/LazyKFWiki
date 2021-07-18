@@ -13,3 +13,5 @@ For second part you can try few workarounds.
 * Files extraction should start and a notify will pop on top right corner.
 
 If this doesn't work, congrats, you are unlucky and have to do the xtraction manually. Download the [KFTempArchiveExtractor](https://github.com/Mateos81/KFTempArchiveExtractor/releases/), which is based on [cmicroc's guide](https://steamcommunity.com/sharedfiles/filedetails/?id=291724762).
+
+Or ask authors to provide download link, so you can install mods manually.
