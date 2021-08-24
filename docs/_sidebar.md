@@ -4,9 +4,10 @@
 * **Perks**
   * [Berserker](./Berserker.md)
 
-* **Tweaks**
+* **User Config Tweaks**
   * [Client Config Diffs](./ClientConfigDiffs.md)
   * [Russian Localization](./russian_kf.md)
+  * [Missing MapVote Page](./MapvotepageFix.md)
 
 * **Workshop**
   * [Rule of good manners](../Workshop/Workshop_Etiquette.md)
