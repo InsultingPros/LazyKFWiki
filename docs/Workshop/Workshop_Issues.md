@@ -12,6 +12,6 @@ For second part you can try few workarounds.
 * Start a solo game (faster than joining a multiplayer), play for a wave and disconnect to main menu.
 * Files extraction should start and a notify will pop on top right corner.
 
-If this doesn't work, congrats, you are unlucky and have to do the xtraction manually. Download the [KFTempArchiveExtractor](https://github.com/Mateos81/KFTempArchiveExtractor/releases/), which is based on [cmicroc's guide](https://steamcommunity.com/sharedfiles/filedetails/?id=291724762).
+If this doesn't work, congrats, you are unlucky and have to do the extraction manually. Download the [KFTempArchiveExtractor](https://github.com/Mateos81/KFTempArchiveExtractor/releases/), which is based on [cmicroc's guide](https://steamcommunity.com/sharedfiles/filedetails/?id=291724762).
 
-Or ask authors to provide download link, so you can install mods manually.
+And there is a little possibility that [cleaning steam download cache](https://steamcommunity.com/sharedfiles/filedetails/?id=2203736418) may help too. But better ask authors to provide download links, so you can install mods manually.

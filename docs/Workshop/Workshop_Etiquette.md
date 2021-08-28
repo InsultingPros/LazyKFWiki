@@ -27,4 +27,4 @@ This leads to not being able to quickly find something that you really type, and
 
 * If you upload a **map**, tag it as `map`, and maybe `co-op`, `single`, `multiplayer` at max.
 * If you upload a **video ad replacement** maybe put `misc`, `art` and few similar ones.
-* Etc, etc.
+* tbd.
