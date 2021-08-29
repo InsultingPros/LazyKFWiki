@@ -227,6 +227,8 @@ Level.NetMode == NM_Client
 RemoteRole = 2
 // source: https://github.com/InsultingPros/KillingFloor/blob/main/Engine/Classes/Actor.uc#L224
 RemoteRole = ROLE_SimulatedProxy
+
+etc.
 ```
 
 If you have any IDE installed just check the variable definitions. It's not that hard.
