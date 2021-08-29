@@ -1,34 +1,43 @@
-!> Always respect mod authors, ask their permissions and give credits. This is not a guide for harsh stealing.
+!> Respect mod authors and credit them. This is not a guide for stealing.
 
-Let's not dig into why people strip the source code from their creations and related morality. If you are interested do your research or read some [discussions](https://wiki.beyondunreal.com/Legacy:Trystan/Code_Protection) with mod makers.
+Some of the mods strip their source code, which prevents community from modifying or learning from them. Each mod author has their own reasons and you can read some relevant discussion [here](https://wiki.beyondunreal.com/Legacy:Trystan/Code_Protection). Whatever your opinion on decompilation is - we won't try to argue about it in this document and simply tell you how to do it. 
 
-Sometimes you really need to check something in other peoples mods and it appears stripped. Welp there are few easy solutions, but we will list best ones.
+## Requirements
 
-* [kazachidla's](http://steamcommunity.com/profiles/76561198012931650) **UT Package Tool** [guide](https://steamcommunity.com/sharedfiles/filedetails/?id=314459304). Though, the app is pretty inaccurate and requires lots of manual editing. And guide formating will make it hard to read.
-* [Eliot's](https://github.com/EliotVU/Unreal-Library) [**UE Explorer**](https://eliotvu.com/portfolio/view/21/ue-explorer). Best variant and all later text will be about it.
+In this guide we will discuss [Eliot's](https://github.com/EliotVU/Unreal-Library) [**UE Explorer**](https://eliotvu.com/portfolio/view/21/ue-explorer) with following tools:
+
+* [VSCode](https://code.visualstudio.com/) with [UnrealScript extension](https://marketplace.visualstudio.com/items?itemName=EliotVU.uc).
+* [KF SDK](https://steamdb.info/app/1260/) to get game sources and UCC.exe.
+  * [Killing Floor Git](https://github.com/InsultingPros/KillingFloor) on top of it for complete sources.
+* [UnCodex](https://sourceforge.net/projects/uncodex/) for easy package dependancy check.
 
 ## Bytecode vs UnrealScript
 
-UE Explorer *guesses* exported scripts from the package bytecode, and some statements differ in bytecode. So don't be confused when you find no `for` loops, no `else if` and so on. For most part you will be able to compile exported code without issues, and result will be the same. But you really want to make the code more human readable, at least for yourself and later modificatons.
-
-## Additional Requirements
-
-These will greatly help you in editing, finding variables. Apps may differ for you, we just advice most user friendly and stable variant.
-
-* [VSCode](https://code.visualstudio.com/).
-* [VSCode UnrealScript extension](https://marketplace.visualstudio.com/items?itemName=EliotVU.uc).
-* [KF SDK](https://steamdb.info/app/1260/), or better download more complete sources from [Killing Floor Git](https://github.com/InsultingPros/KillingFloor).
-* [UnCodex](https://sourceforge.net/projects/uncodex/) for easy package dependancy check.
-
-### Code Comments
-
-`stripsourcecommandlet` removes all your code from package, including comments. You have to read and guess the exported code on your own. And add your own comments!
-
-For UE Explorer's comments (aka `// End:0x69 [Loop If]`, `//return;` and so on) you can suppress them in application options, but they are helpful and make editing visually easier, better leave them until the very end.
+Mutator compilation turns UnrealScript into unreal engine-specific bytecode. This process is destructive: semantics of many of the UnrealScript syntax constructs (e.g. if/else blocks and loops) are lost during their translation into bytecode and decompilation cannot reliably reproduce them, usually outputting a more complex code (even if functionally identical). Below we will give you several examples of how "compilation -> decompilation" process might transform UnrealScript source code to help you revert some of those changes.
 
 ### FOR loops
 
-You wont find any FOR loops in stripped package. Compiler replaces it with [labels](https://wiki.beyondunreal.com/States#State_Labels_and_Latent_Functions) and [goto statements](https://wiki.beyondunreal.com/GoTo_statement).
+UEExplorer won't recover `for` loops by himself. Code like this:
+
+```clike
+// modify zeds in special squads
+function ModifySquadArray(out array<SpecialSquad> SquadArray)
+{
+  local int i, j;
+
+  // for loop for SquadArray
+  for (i = 0; i < SquadArray.Length; i++)
+  {
+    // for loop for SquadArray[i].ZedClass
+    for (j = 0; j < SquadArray[i].ZedClass.Length; j++)
+    {
+      ReplaceMonsterClass(SquadArray[i].ZedClass[j]);
+    }
+  }
+}
+```
+
+Will be translated into combination of [labels](https://wiki.beyondunreal.com/States#State_Labels_and_Latent_Functions) and [goto statements](https://wiki.beyondunreal.com/GoTo_statement):
 
 ```clike
 function ModifySquadArray(out array<SpecialSquad> SquadArray)
@@ -60,31 +69,11 @@ function ModifySquadArray(out array<SpecialSquad> SquadArray)
 
 If you compile it, it will be perfectly fine. But this is hardly readable, especially when code is pretty big. Remove labels and convert goto's into FOR loops.
 
-```clike
-// modify zeds in special squads
-function ModifySquadArray(out array<SpecialSquad> SquadArray)
-{
-  local int i, j;
-
-  // for loop for SquadArray
-  for (i = 0; i < SquadArray.Length; i++)
-  {
-    // for loop for SquadArray[i].ZedClass
-    for (j = 0; j < SquadArray[i].ZedClass.Length; j++)
-    {
-      ReplaceMonsterClass(SquadArray[i].ZedClass[j]);
-    }
-  }
-}
-```
-
-Looks pretty and understandable, right?
-
-If you see `// [Explicit Break]` replace with [break statement](https://wiki.beyondunreal.com/Break_statement), and for `// [Explicit Continue]` : [continue statement](https://wiki.beyondunreal.com/Continue_statement).
+If you see any `// [Explicit Break]` replace with [break statement](https://wiki.beyondunreal.com/Break_statement), and for `// [Explicit Continue]` : [continue statement](https://wiki.beyondunreal.com/Continue_statement).
 
 ### Replicaion Blocks
 
-Everything will be exported fine, except unreal script's break lines: `;`.
+Everything will be exported fine, except replication statements will miss required semicolons `;`. You need to add them manually:
 
 ```clike
 replication
@@ -94,8 +83,6 @@ replication
     CsHDRI
 }
 ```
-
-Add it and replace UE Explorer comments.
 
 ```clike
 replication
@@ -107,63 +94,18 @@ replication
 
 ### Defaultproperties
 
-You can view them in UE Explorer, but they are not guaranteed to be correct due to [some issues](https://github.com/EliotVU/Unreal-Library/issues/40#issuecomment-907320329). We highly advice you to decompile / `batchexport` the stripped package to get `defaultproperties` blocks and manually copy-paste them into UE Explorer exported code.
+You can view them in UE Explorer, but they are not guaranteed to be correct due to [some issues](https://github.com/EliotVU/Unreal-Library/issues/40#issuecomment-907320329) and unrealscript [factors](https://wiki.beyondunreal.com/Subobjects#Subobjects_in_exported_source_code).
 
-Here are some examples of wrong UE Explorer output.
-
-```clike
-defaultproperties
-{
-  FireModeClass=class'W_DualMK23Fire'
-}
-```
-
-`FireModeClass` is a static array defined in [Weapon](https://github.com/InsultingPros/KillingFloor/blob/main/Engine/Classes/Weapon.uc#L33). If you compile in this way, you will crash at weapon firing attempt. Correct code is:
+We highly advice you to manually decompile the stripped package and copy-paste `defaultproperties` into UE Explorer export.
 
 ```clike
-defaultproperties
-{
-  FireModeClass(0)=class'W_DualMK23Fire'
-}
-```
-
-In other cases we can't even wiew the arrays.
-
-```clike
-defaultproperties
-{
-  PanelClass=/* Array type was not detected. */
-  // should be "CsHDMut.GUI_BuyMenuTab"
-}
-```
-
-And there are huge issues with [subobjects](https://wiki.beyondunreal.com/Subobjects#Subobjects_in_exported_source_code).
-
-```clike
-defaultproperties
-{
-  begin object name=SaleBox class=GUI_BuyMenuSaleListBox
-    OnCreateComponent=InternalOnCreateComponent
-    ...
-  object end
-  // Reference: GUI_BuyMenuSaleListBox'GUI_BuyMenuTab.SaleBox'
-  SaleSelect=SaleBox
-}
-```
-
-This must be converted (or better copy-pasted from usual `batchexport`) into:
-
-```clike
-Begin Object Class=GUI_BuyMenuSaleListBox Name=SaleBox
-    OnCreateComponent=SaleBox.InternalOnCreateComponent
-    ...
-  End Object
-  SaleSelect=GUI_BuyMenuSaleListBox'CsHDMut.GUI_BuyMenuTab.SaleBox'
+ucc.exe batchexport PACKAGENAME.u class uc ../DIRECTORY/
+pause
 ```
 
 ### ElseIF Statements
 
-UE Explorer will print only usual IF statements and avoid [ElseIF](https://wiki.beyondunreal.com/If_statement#.22ElseIf.22_statement)'s.
+UE Explorer will print only usual `if` statements and avoid [ElseIF](https://wiki.beyondunreal.com/If_statement#.22ElseIf.22_statement)'s:
 
 ```clike
 static function AddDefaultInventory(KFPlayerReplicationInfo KFPRI, Pawn P)
@@ -186,7 +128,7 @@ static function AddDefaultInventory(KFPlayerReplicationInfo KFPRI, Pawn P)
 }
 ```
 
-Make it more human readable.
+Make it less cumbersome.
 
 ```clike
 static function AddDefaultInventory(KFPlayerReplicationInfo KFPRI, Pawn P)
@@ -202,24 +144,21 @@ static function AddDefaultInventory(KFPlayerReplicationInfo KFPRI, Pawn P)
 }
 ```
 
-### Class Modifiers
-
-UE Explorer will add some [class modifiers](https://wiki.beyondunreal.com/Classes#Editor-related_modifiers) that wont break anything but you actually don't need them.
-
-```clike
-class Vet_Commando extends KFVetCommando
-  abstract
-  hidecategories(Movement,Collision,Lighting,LightColor,Karma,Force);
-  // ^ whole line can be removed
-```
-
-Be cautious with `dependson` lines, very rarely they can be required. But most time you are free to cleanup.
-
 ### Enumeration Detection
 
-In some cases you will notice that UE Explorer shows `int`'s instead of enumerations. That's mostly fine, but you have to check the parent classes to understand what enum is that, so better fix that parts.
+UE Explorer can turn enum values into numeric constants that represent them, which might make code hard to understand. If you want to fix these parts, you'll have to do it manually, by looking up enum definitions:
 
 ```clike
+enum ENetMode
+{
+  //  Enum values are enumerated with integer values starting from 0:
+  NM_Standalone,        // 0
+  NM_DedicatedServer,   // 1
+  NM_ListenServer,      // 2
+  NM_Client             // 3
+}
+
+// examples
 Level.NetMode == 3
 // source: https://github.com/InsultingPros/KillingFloor/blob/main/Engine/Classes/LevelInfo.uc#L188
 Level.NetMode == NM_Client
@@ -229,4 +168,8 @@ RemoteRole = 2
 RemoteRole = ROLE_SimulatedProxy
 ```
 
-If you have any IDE installed just check the variable definitions. It's not that hard.
+Just check variable definitions in VSCode if you have any difficulties.
+
+## Notable Mention
+
+There are few decompilation guides around, but one of the KF orientated ones in [kazachidla's](http://steamcommunity.com/profiles/76561198012931650) **UT Package Tool** [guide](https://steamcommunity.com/sharedfiles/filedetails/?id=314459304).
