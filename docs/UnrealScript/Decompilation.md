@@ -95,7 +95,7 @@ replication
 }
 ```
 
-Add it and replace UE Explorer comments.
+Add them and replace UE Explorer comments.
 
 ```clike
 replication
