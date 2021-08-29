@@ -13,7 +13,7 @@ UE Explorer *guesses* exported scripts from the package bytecode, and some state
 
 ## Additional Requirements
 
-These will greatly help you in editing, finding variables. Apps may differ for you, we just advice most user friendly and stable variant.
+These will greatly help you in source file editing. Apps may differ for you, we just advice most user friendly and stable variant.
 
 * [VSCode](https://code.visualstudio.com/).
 * [VSCode UnrealScript extension](https://marketplace.visualstudio.com/items?itemName=EliotVU.uc).
