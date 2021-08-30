@@ -154,11 +154,14 @@ defaultproperties
 This must be converted (or better copy-pasted from usual `batchexport`) into:
 
 ```clike
-Begin Object Class=GUI_BuyMenuSaleListBox Name=SaleBox
+defaultproperties
+{
+  Begin Object Class=GUI_BuyMenuSaleListBox Name=SaleBox
     OnCreateComponent=SaleBox.InternalOnCreateComponent
     ...
   End Object
   SaleSelect=GUI_BuyMenuSaleListBox'CsHDMut.GUI_BuyMenuTab.SaleBox'
+}
 ```
 
 ### ElseIF Statements
