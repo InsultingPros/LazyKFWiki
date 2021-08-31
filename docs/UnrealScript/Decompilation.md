@@ -2,25 +2,17 @@
 
 Some of the mods strip their source code, which prevents community from modifying or learning from them. Each mod author has their own reasons and you can read some relevant discussion [here](https://wiki.beyondunreal.com/Legacy:Trystan/Code_Protection). Whatever your opinion on decompilation is - we won't try to argue about it in this document and simply tell you how to do it. 
 
-In this guide we will discuss [Eliot's](https://github.com/EliotVU/Unreal-Library) [**UE Explorer**](https://eliotvu.com/portfolio/view/21/ue-explorer).
-
-## Bytecode vs UnrealScript
-
-Mutator compilation turns UnrealScript into unreal engine-specific bytecode. This process is destructive: semantics of many of the UnrealScript syntax constructs (e.g. if/else blocks and loops) are lost during their translation into bytecode and decompilation cannot reliably reproduce them, usually outputting a more complex code (even if functionally identical). Below we will give you several examples of how "compilation -> decompilation" process might transform UnrealScript source code to help you revert some of those changes.
-
 ## Requirements
 
-In this guide we will use following tools:
+In this guide we will discuss [Eliot's](https://github.com/EliotVU/Unreal-Library) [**UE Explorer**](https://eliotvu.com/portfolio/view/21/ue-explorer) with following tools:
 
 * [VSCode](https://code.visualstudio.com/) with [UnrealScript extension](https://marketplace.visualstudio.com/items?itemName=EliotVU.uc).
 * [KF SDK](https://steamdb.info/app/1260/), or better download more complete sources from [Killing Floor Git](https://github.com/InsultingPros/KillingFloor).
 * [UnCodex](https://sourceforge.net/projects/uncodex/) for easy package dependancy check.
 
-### Code Comments
+## Bytecode vs UnrealScript
 
-`stripsourcecommandlet` removes all your code from package, including comments. You have to read and guess the exported code on your own. And add your own comments!
-
-For UE Explorer's comments (aka `// End:0x69 [Loop If]`, `//return;` and so on) you can suppress them in application options, but they are helpful and make editing visually easier, better leave them until the very end.
+Mutator compilation turns UnrealScript into unreal engine-specific bytecode. This process is destructive: semantics of many of the UnrealScript syntax constructs (e.g. if/else blocks and loops) are lost during their translation into bytecode and decompilation cannot reliably reproduce them, usually outputting a more complex code (even if functionally identical). Below we will give you several examples of how "compilation -> decompilation" process might transform UnrealScript source code to help you revert some of those changes.
 
 ### FOR loops
 
