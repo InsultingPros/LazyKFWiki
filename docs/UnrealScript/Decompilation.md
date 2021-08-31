@@ -7,7 +7,8 @@ Some of the mods strip their source code, which prevents community from modifyin
 In this guide we will discuss [Eliot's](https://github.com/EliotVU/Unreal-Library) [**UE Explorer**](https://eliotvu.com/portfolio/view/21/ue-explorer) with following tools:
 
 * [VSCode](https://code.visualstudio.com/) with [UnrealScript extension](https://marketplace.visualstudio.com/items?itemName=EliotVU.uc).
-* [KF SDK](https://steamdb.info/app/1260/), or better download more complete sources from [Killing Floor Git](https://github.com/InsultingPros/KillingFloor).
+* [KF SDK](https://steamdb.info/app/1260/) to get game sources and UCC.exe.
+  * [Killing Floor Git](https://github.com/InsultingPros/KillingFloor) on top of it for complete sources.
 * [UnCodex](https://sourceforge.net/projects/uncodex/) for easy package dependancy check.
 
 ## Bytecode vs UnrealScript
@@ -97,60 +98,9 @@ replication
 
 You can view them in UE Explorer, but they are not guaranteed to be correct due to [some issues](https://github.com/EliotVU/Unreal-Library/issues/40#issuecomment-907320329). We highly advice you to decompile / `batchexport` the stripped package to get `defaultproperties` blocks and manually copy-paste them into UE Explorer exported code.
 
-Here are some examples of wrong UE Explorer output.
-
-```clike
-defaultproperties
-{
-  FireModeClass=class'W_DualMK23Fire'
-}
-```
-
-`FireModeClass` is a static array defined in [Weapon](https://github.com/InsultingPros/KillingFloor/blob/main/Engine/Classes/Weapon.uc#L33). If you compile in this way, you will crash at weapon firing attempt. Correct code is:
-
-```clike
-defaultproperties
-{
-  FireModeClass(0)=class'W_DualMK23Fire'
-}
-```
-
-In other cases we can't even wiew the arrays.
-
-```clike
-defaultproperties
-{
-  PanelClass=/* Array type was not detected. */
-  // should be "CsHDMut.GUI_BuyMenuTab"
-}
-```
-
 And there are huge issues with [subobjects](https://wiki.beyondunreal.com/Subobjects#Subobjects_in_exported_source_code).
 
-```clike
-defaultproperties
-{
-  begin object name=SaleBox class=GUI_BuyMenuSaleListBox
-    OnCreateComponent=InternalOnCreateComponent
-    ...
-  object end
-  // Reference: GUI_BuyMenuSaleListBox'GUI_BuyMenuTab.SaleBox'
-  SaleSelect=SaleBox
-}
-```
-
-This must be converted (or better copy-pasted from usual `batchexport`) into:
-
-```clike
-defaultproperties
-{
-  Begin Object Class=GUI_BuyMenuSaleListBox Name=SaleBox
-    OnCreateComponent=SaleBox.InternalOnCreateComponent
-    ...
-  End Object
-  SaleSelect=GUI_BuyMenuSaleListBox'CsHDMut.GUI_BuyMenuTab.SaleBox'
-}
-```
+ADD INFO HOW TO.
 
 ### ElseIF Statements
 
@@ -177,7 +127,7 @@ static function AddDefaultInventory(KFPlayerReplicationInfo KFPRI, Pawn P)
 }
 ```
 
-Make it more human readable.
+Make it more cumbersome.
 
 ```clike
 static function AddDefaultInventory(KFPlayerReplicationInfo KFPRI, Pawn P)
