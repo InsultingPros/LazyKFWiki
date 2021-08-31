@@ -127,7 +127,7 @@ static function AddDefaultInventory(KFPlayerReplicationInfo KFPRI, Pawn P)
 }
 ```
 
-Make it more cumbersome.
+Make it less cumbersome.
 
 ```clike
 static function AddDefaultInventory(KFPlayerReplicationInfo KFPRI, Pawn P)
