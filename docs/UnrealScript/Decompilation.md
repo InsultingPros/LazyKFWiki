@@ -193,22 +193,9 @@ static function AddDefaultInventory(KFPlayerReplicationInfo KFPRI, Pawn P)
 }
 ```
 
-### Class Modifiers
-
-UE Explorer will add some [class modifiers](https://wiki.beyondunreal.com/Classes#Editor-related_modifiers) that wont break anything but you actually don't need them.
-
-```clike
-class Vet_Commando extends KFVetCommando
-  abstract
-  hidecategories(Movement,Collision,Lighting,LightColor,Karma,Force);
-  // ^ whole line can be removed
-```
-
-Be cautious with `dependson` lines, very rarely they can be required. But most time you are free to cleanup.
-
 ### Enumeration Detection
 
-In some cases you will notice that UE Explorer shows `int`'s instead of enumerations. That's mostly fine, but you have to check the parent classes to understand what enum is that, so better fix that parts.
+UE Explorer can turn enum values into numeric constants that represent them, which might make code hard to understand. If you want to fix these parts, you'll have to do it manually, by looking up enum definitions:
 
 ```clike
 Level.NetMode == 3
@@ -222,7 +209,7 @@ RemoteRole = ROLE_SimulatedProxy
 etc.
 ```
 
-If you have any IDE installed just check the variable definitions. It's not that hard.
+Just check variable definitions in VSCode if you have any difficulties.
 
 ## Notable Mention
 
