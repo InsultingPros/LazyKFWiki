@@ -1,10 +1,7 @@
-!> Always respect mod authors, ask their permissions and give credits. This is not a guide for harsh stealing.
+!> Respect mod authors and credit them. This is not a guide for stealing.
 
-Let's not dig into why people strip the source code from their creations and related morality. If you are interested do your research or read some [discussions](https://wiki.beyondunreal.com/Legacy:Trystan/Code_Protection) with mod makers.
+Some of the mods strip their source code, which prevents community from modifying or learning from them. Each mod author has their own reasons and you can read some relevant discussion [here](https://wiki.beyondunreal.com/Legacy:Trystan/Code_Protection). Whatever your opinion on decompilation is - we won't try to argue about it in this document and simply tell you how to do it. Two main ways of decompiling mutator with stripped code are:
 
-Sometimes you really need to check something in other peoples mods and it appears stripped. Welp there are few easy solutions, but we will list best ones.
-
-* [kazachidla's](http://steamcommunity.com/profiles/76561198012931650) **UT Package Tool** [guide](https://steamcommunity.com/sharedfiles/filedetails/?id=314459304). Though, the app is pretty inaccurate and requires lots of manual editing. And guide formating will make it hard to read.
 * [Eliot's](https://github.com/EliotVU/Unreal-Library) [**UE Explorer**](https://eliotvu.com/portfolio/view/21/ue-explorer). Best variant and all later text will be about it.
 
 ## Bytecode vs UnrealScript
@@ -235,3 +232,7 @@ etc.
 ```
 
 If you have any IDE installed just check the variable definitions. It's not that hard.
+
+## Notable Mention
+
+There are few decompilation guides around, but one of the KF orientated ones in [kazachidla's](http://steamcommunity.com/profiles/76561198012931650) **UT Package Tool** [guide](https://steamcommunity.com/sharedfiles/filedetails/?id=314459304).
