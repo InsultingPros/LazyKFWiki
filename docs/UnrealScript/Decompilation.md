@@ -1,19 +1,18 @@
 !> Respect mod authors and credit them. This is not a guide for stealing.
 
-Some of the mods strip their source code, which prevents community from modifying or learning from them. Each mod author has their own reasons and you can read some relevant discussion [here](https://wiki.beyondunreal.com/Legacy:Trystan/Code_Protection). Whatever your opinion on decompilation is - we won't try to argue about it in this document and simply tell you how to do it. Two main ways of decompiling mutator with stripped code are:
+Some of the mods strip their source code, which prevents community from modifying or learning from them. Each mod author has their own reasons and you can read some relevant discussion [here](https://wiki.beyondunreal.com/Legacy:Trystan/Code_Protection). Whatever your opinion on decompilation is - we won't try to argue about it in this document and simply tell you how to do it. 
 
-* [Eliot's](https://github.com/EliotVU/Unreal-Library) [**UE Explorer**](https://eliotvu.com/portfolio/view/21/ue-explorer). Best variant and all later text will be about it.
+In this guide we will discuss [Eliot's](https://github.com/EliotVU/Unreal-Library) [**UE Explorer**](https://eliotvu.com/portfolio/view/21/ue-explorer).
 
 ## Bytecode vs UnrealScript
 
-UE Explorer *guesses* exported scripts from the package bytecode, and some statements differ in bytecode. So don't be confused when you find no `for` loops, no `else if` and so on. For most part you will be able to compile exported code without issues, and result will be the same. But you really want to make the code more human readable, at least for yourself and later modificatons.
+Mutator compilation turns UnrealScript into unreal engine-specific bytecode. This process is destructive: semantics of many of the UnrealScript syntax constructs (e.g. if/else blocks and loops) are lost during their translation into bytecode and decompilation cannot reliably reproduce them, usually outputting a more complex code (even if functionally identical). Below we will give you several examples of how "compilation -> decompilation" process might transform UnrealScript source code to help you revert some of those changes.
 
-## Additional Requirements
+## Requirements
 
-These will greatly help you in source file editing. Apps may differ for you, we just advice most user friendly and stable variant.
+In this guide we will use following tools:
 
-* [VSCode](https://code.visualstudio.com/).
-* [VSCode UnrealScript extension](https://marketplace.visualstudio.com/items?itemName=EliotVU.uc).
+* [VSCode](https://code.visualstudio.com/) with [UnrealScript extension](https://marketplace.visualstudio.com/items?itemName=EliotVU.uc).
 * [KF SDK](https://steamdb.info/app/1260/), or better download more complete sources from [Killing Floor Git](https://github.com/InsultingPros/KillingFloor).
 * [UnCodex](https://sourceforge.net/projects/uncodex/) for easy package dependancy check.
 
