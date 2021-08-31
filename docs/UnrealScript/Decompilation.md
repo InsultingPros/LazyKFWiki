@@ -17,7 +17,27 @@ Mutator compilation turns UnrealScript into unreal engine-specific bytecode. Thi
 
 ### FOR loops
 
-You wont find any FOR loops in stripped package. Compiler replaces it with [labels](https://wiki.beyondunreal.com/States#State_Labels_and_Latent_Functions) and [goto statements](https://wiki.beyondunreal.com/GoTo_statement).
+UEExplorer won't recover `for` loops by himself. Code like this:
+
+```clike
+// modify zeds in special squads
+function ModifySquadArray(out array<SpecialSquad> SquadArray)
+{
+  local int i, j;
+
+  // for loop for SquadArray
+  for (i = 0; i < SquadArray.Length; i++)
+  {
+    // for loop for SquadArray[i].ZedClass
+    for (j = 0; j < SquadArray[i].ZedClass.Length; j++)
+    {
+      ReplaceMonsterClass(SquadArray[i].ZedClass[j]);
+    }
+  }
+}
+```
+
+Will be translated into combination of [labels](https://wiki.beyondunreal.com/States#State_Labels_and_Latent_Functions) and [goto statements](https://wiki.beyondunreal.com/GoTo_statement):
 
 ```clike
 function ModifySquadArray(out array<SpecialSquad> SquadArray)
@@ -48,24 +68,6 @@ function ModifySquadArray(out array<SpecialSquad> SquadArray)
 ```
 
 If you compile it, it will be perfectly fine. But this is hardly readable, especially when code is pretty big. Remove labels and convert goto's into FOR loops.
-
-```clike
-// modify zeds in special squads
-function ModifySquadArray(out array<SpecialSquad> SquadArray)
-{
-  local int i, j;
-
-  // for loop for SquadArray
-  for (i = 0; i < SquadArray.Length; i++)
-  {
-    // for loop for SquadArray[i].ZedClass
-    for (j = 0; j < SquadArray[i].ZedClass.Length; j++)
-    {
-      ReplaceMonsterClass(SquadArray[i].ZedClass[j]);
-    }
-  }
-}
-```
 
 Looks pretty and understandable, right?
 
