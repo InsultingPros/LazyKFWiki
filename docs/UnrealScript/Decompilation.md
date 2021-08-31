@@ -198,6 +198,16 @@ static function AddDefaultInventory(KFPlayerReplicationInfo KFPRI, Pawn P)
 UE Explorer can turn enum values into numeric constants that represent them, which might make code hard to understand. If you want to fix these parts, you'll have to do it manually, by looking up enum definitions:
 
 ```clike
+enum ENetMode
+{
+  //  Enum values are enumerated with integer values starting from 0:
+  NM_Standalone,        // 0
+  NM_DedicatedServer,   // 1
+  NM_ListenServer,      // 2
+  NM_Client             // 3
+}
+
+// examples
 Level.NetMode == 3
 // source: https://github.com/InsultingPros/KillingFloor/blob/main/Engine/Classes/LevelInfo.uc#L188
 Level.NetMode == NM_Client
@@ -205,8 +215,6 @@ Level.NetMode == NM_Client
 RemoteRole = 2
 // source: https://github.com/InsultingPros/KillingFloor/blob/main/Engine/Classes/Actor.uc#L224
 RemoteRole = ROLE_SimulatedProxy
-
-etc.
 ```
 
 Just check variable definitions in VSCode if you have any difficulties.
