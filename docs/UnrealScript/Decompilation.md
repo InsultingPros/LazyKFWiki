@@ -73,7 +73,7 @@ If you see `// [Explicit Break]` replace with [break statement](https://wiki.bey
 
 ### Replicaion Blocks
 
-Everything will be exported fine, except unreal script's break lines: `;`.
+Everything will be exported fine, except replication statements will miss required semicolons `;`. You need to add them manually:
 
 ```clike
 replication
@@ -83,8 +83,6 @@ replication
     CsHDRI
 }
 ```
-
-Add them and replace UE Explorer comments.
 
 ```clike
 replication
@@ -104,7 +102,7 @@ ADD INFO HOW TO.
 
 ### ElseIF Statements
 
-UE Explorer will print only usual IF statements and avoid [ElseIF](https://wiki.beyondunreal.com/If_statement#.22ElseIf.22_statement)'s.
+UE Explorer will print only usual `if` statements and avoid [ElseIF](https://wiki.beyondunreal.com/If_statement#.22ElseIf.22_statement)'s:
 
 ```clike
 static function AddDefaultInventory(KFPlayerReplicationInfo KFPRI, Pawn P)
