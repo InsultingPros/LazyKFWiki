@@ -69,9 +69,7 @@ function ModifySquadArray(out array<SpecialSquad> SquadArray)
 
 If you compile it, it will be perfectly fine. But this is hardly readable, especially when code is pretty big. Remove labels and convert goto's into FOR loops.
 
-Looks pretty and understandable, right?
-
-If you see `// [Explicit Break]` replace with [break statement](https://wiki.beyondunreal.com/Break_statement), and for `// [Explicit Continue]` : [continue statement](https://wiki.beyondunreal.com/Continue_statement).
+If you see any `// [Explicit Break]` replace with [break statement](https://wiki.beyondunreal.com/Break_statement), and for `// [Explicit Continue]` : [continue statement](https://wiki.beyondunreal.com/Continue_statement).
 
 ### Replicaion Blocks
 
@@ -96,11 +94,14 @@ replication
 
 ### Defaultproperties
 
-You can view them in UE Explorer, but they are not guaranteed to be correct due to [some issues](https://github.com/EliotVU/Unreal-Library/issues/40#issuecomment-907320329). We highly advice you to decompile / `batchexport` the stripped package to get `defaultproperties` blocks and manually copy-paste them into UE Explorer exported code.
+You can view them in UE Explorer, but they are not guaranteed to be correct due to [some issues](https://github.com/EliotVU/Unreal-Library/issues/40#issuecomment-907320329) and unrealscript [factors](https://wiki.beyondunreal.com/Subobjects#Subobjects_in_exported_source_code).
 
-And there are huge issues with [subobjects](https://wiki.beyondunreal.com/Subobjects#Subobjects_in_exported_source_code).
+We highly advice you to manually decompile the stripped package and copy-paste `defaultproperties` into UE Explorer export.
 
-ADD INFO HOW TO.
+```clike
+ucc.exe batchexport PACKAGENAME.u class uc ../DIRECTORY/
+pause
+```
 
 ### ElseIF Statements
 
