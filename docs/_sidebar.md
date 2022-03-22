@@ -2,9 +2,9 @@
   * [Welcome](../README.md)
 
 * **User Config Tweaks**
-  * [Client Config Diffs](../ClientConfigDiffs.md)
+  * [Client Config Diffs](../Fixes/ClientConfigDiffs.md)
   * [Russian Localization](../russian_kf.md)
-  * [Missing MapVote Page](../MapvotepageFix.md)
+  * [Missing MapVote Page](../Fixes/MapvotepageFix.md)
 
 * **Workshop**
   * [Rule of good manners](../Workshop/Workshop_Etiquette.md)
@@ -13,6 +13,7 @@
   * [BBCode Template](../Workshop/Workshop_Tmpl.md)
 
 * **Game Mechanics**
+  * [Whitelist system](../Random/Whitelist.md)
   * [Agro](../Agro.md)
 
 * **Unreal Script**

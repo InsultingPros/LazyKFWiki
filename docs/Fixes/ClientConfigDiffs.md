@@ -59,7 +59,7 @@ AvoidHitches=True
 
 ### Part #1 for fixing mouse smoothing
 
-> Changing the minimum desired framerate ensures that framerate smoothing is not activated, which negatively affects mouse input. Setting Reduce Mouse Lag to false ensures that it remains off. 
+> Changing the minimum desired framerate ensures that framerate smoothing is not activated, which negatively affects mouse input. Setting Reduce Mouse Lag to false ensures that it remains off.
 
 ```js
 [SDLDrv.SDLClient]
@@ -79,7 +79,7 @@ ReduceMouseLag=False
 
 ### Part #2 for fixing mouse smoothing
 
-Mouse smoothing is a pure cancer in this game. Don't forget to check Killingfloor.ini edits as well. 
+Mouse smoothing is a pure cancer in this game. Don't forget to check Killingfloor.ini edits as well.
 
 ```js
 [Engine.Input]
