@@ -1,4 +1,14 @@
-Nice looking, laconic and contains all crucial info. I always use this template and it's slight variations for my uploads. Check [Weapon DLC Unlocker](https://steamcommunity.com/sharedfiles/filedetails/?id=834746972) for example.
+Fancy, laconic and contains all crucial info:
+
+- What it does in few words.
+- Whitelist status.
+- Detailed technical info - package, class names, config files, specific settings.
+- Compatibility info.
+- Installation info for clients (because Workshop may and will [**fail**](../Workshop/Workshop_Issues.md)) / server admins.
+- Download links for admins / clients.
+- Credits and other links.
+
+I always use this template and it's slight variations for my uploads. Check [Weapon DLC Unlocker](https://steamcommunity.com/sharedfiles/filedetails/?id=834746972) for example.
 
 ![img](./../_media/workshop_tmpl_1.png ':size=300')
 ![img](./../_media/workshop_tmpl_2.png ':size=300')
@@ -80,6 +90,8 @@ Author - [url=http://steamcommunity.com/profiles/76561198051378449]Flame[/url]
 
 ## WhiteList status
 
+Yeah, it's 2022 and people still care for stats. Always inform your users how your mod affects perk progression.
+
 ```js
 [h1][b]Whitelist Status[/b][/h1]
 [list]
@@ -91,8 +103,10 @@ Author - [url=http://steamcommunity.com/profiles/76561198051378449]Flame[/url]
 
 ## Credits
 
+If you want to link steam accounts always convert `../id/SteamProfileCustomFancyName/` URL's to `../profiles/steamID64/`, with <https://steamid.io/> or similar services. People tend to change steam profile names 10 times per day, but ID never changes.
+
 ```js
 [h3][b]Credits[/b][/h3]
 ArtWork - [url=https://www.deviantart.com/brainstorm-bw-style/art/Fleshpound-Rage-colors-453220493]Brainstorm-bw-style[/url]
-Testers - [url=https://steamcommunity.com/id/mukanshin0/]Shino[/url], [url=https://steamcommunity.com/id/Joabyy/]Joabyy[/url].
+Testers - [url=http://steamcommunity.com/profiles/76561198200384791]Shino[/url], [url=http://steamcommunity.com/profiles/76561198027407094]Joabyy[/url].
 ```
