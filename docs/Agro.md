@@ -70,3 +70,25 @@ Do you want to get rid of a zed?
 **SCrN and based modes**:
 
 In theory those have advanced and more complicated 
+
+## Zeds that will give you a trouble
+
+We really could not not warn you xD
+
+Vanilla zeds work fine for most cases, for most mods. And most of custom zeds also do that. BUT there are 2 very exceptional zeds which will troll you to death in the worst situations that you expect.
+
+### Brutes + Jasons == rip and tear
+
+Original \ ScrN zed pack (tho this is the worst because Poosh thought why not spawn up to 6 brutes at same time!) or any other existing variants, no matter what these 2 zeds will be very picky on following the global agro rules. And that pickiness is fully random and luck based.
+
+- If you used 1 additional spoon of sugar for your coffee, brute can charge up to your face, do a 180 degree turn and go murder your teammate, who was much further than you and did nothing to him.
+  - Or start to run around and hit everyone without any logic.
+- Brute easily can get mad at some zeds and make them fly to your face across the map. If thats a bloat not much of an issue, but mostly it will be a fleshpound, a jason or an other brute... have fun dealing with it.
+- Depending on a sun orientation Jason can charge person A, hit him several times but don't kill, make a sharp turn and come kill you who afk's behind everyone.
+  - Or turn around and go roam around the map in a rage mode, until he will fall at your head from nowhere.
+
+We can post many more cases that may happen to poor you, but you got the idea. 
+
+If you see one of these zeds (or much worse - squads of them) they are TOP priority to kill. If you fail to do it in time, it will lead to ~70-99% team wipes. Only 3-4 fleshpounds can deal more harm to your team, but even that is a more controllable danger.
+
+And the last note if you are brave enough to handle the brute/jason heat - on maps with bad-broken pathing these quirks will happen more frequantly. But don't think that on good maps you will be safe and loose concentration. Big brute is watching you!
