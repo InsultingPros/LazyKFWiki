@@ -4,8 +4,8 @@
 
 If you are pressing your bind / mapvote key in Esc Menu and nothing happens, most likely:
 
-* Server is not using Marco's [Voting Handler Fix](https://forums.tripwireinteractive.com/index.php?threads/mod-voting-handler-fix.43202/).
-* Your `user.ini` has messed up menu page settings.
+1. Server is not using Marco's [Voting Handler Fix](https://forums.tripwireinteractive.com/index.php?threads/mod-voting-handler-fix.43202/).
+2. Your `user.ini` has messed up menu page settings.
 
 ```clike
 [KFGui.KFGUIController]
