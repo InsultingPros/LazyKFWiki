@@ -12,6 +12,9 @@
   * [How to upload](../Workshop/Workshop_How2.md.md)
   * [BBCode Template](../Workshop/Workshop_Tmpl.md)
 
+* **Dedicated Server**
+  * [Installation](../Dedi/DediInstallation.md)
+
 * **Game Mechanics**
   * [Whitelist system](../Random/Whitelist.md)
   * [Agro](../Agro.md)
