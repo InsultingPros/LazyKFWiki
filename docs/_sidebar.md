@@ -17,5 +17,6 @@
   * [Agro](../Agro.md)
 
 * **Unreal Script**
+  * [Modding Setup](../UnrealScript/ModdingSetup.md)
   * [Stripped Mods Decompilation](../UnrealScript/Decompilation.md)
   * [Profiling](../UnrealScript/Profiling.md)

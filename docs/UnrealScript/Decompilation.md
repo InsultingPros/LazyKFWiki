@@ -1,15 +1,6 @@
 !> Respect mod authors and credit them. This is not a guide for stealing.
 
-Some of the mods strip their source code, which prevents community from modifying or learning from them. Each mod author has their own reasons and you can read some relevant discussion [here](https://wiki.beyondunreal.com/Legacy:Trystan/Code_Protection). Whatever your opinion on decompilation is - we won't try to argue about it in this document and simply tell you how to do it.
-
-## Requirements
-
-In this guide we will discuss [Eliot's](https://github.com/EliotVU/Unreal-Library) [**UE Explorer**](https://eliotvu.com/portfolio/view/21/ue-explorer) with following tools:
-
-* [VSCode](https://code.visualstudio.com/) with [UnrealScript extension](https://marketplace.visualstudio.com/items?itemName=EliotVU.uc).
-* [KF SDK](https://steamdb.info/app/1260/) to get game sources and UCC.exe.
-  * [Killing Floor Git](https://github.com/InsultingPros/KillingFloor) on top of it for complete sources.
-* [UnCodex](https://sourceforge.net/projects/uncodex/) for easy package dependancy check.
+Some authors strip their source code, which prevents community from modifying or learning from them. Each mod author has their own reasons and you can read some relevant discussion [here](https://wiki.beyondunreal.com/Legacy:Trystan/Code_Protection). Whatever your opinion on decompilation is - we won't try to argue about it in this document and simply tell you how to do it with the help of [Eliot's](https://github.com/EliotVU/Unreal-Library) [**UE Explorer**](https://eliotvu.com/portfolio/view/21/ue-explorer).
 
 ## Bytecode vs UnrealScript
 
