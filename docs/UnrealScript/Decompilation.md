@@ -1,6 +1,6 @@
 !> Respect mod authors and credit them. This is not a guide for stealing.
 
-Some of the mods strip their source code, which prevents community from modifying or learning from them. Each mod author has their own reasons and you can read some relevant discussion [here](https://wiki.beyondunreal.com/Legacy:Trystan/Code_Protection). Whatever your opinion on decompilation is - we won't try to argue about it in this document and simply tell you how to do it. 
+Some of the mods strip their source code, which prevents community from modifying or learning from them. Each mod author has their own reasons and you can read some relevant discussion [here](https://wiki.beyondunreal.com/Legacy:Trystan/Code_Protection). Whatever your opinion on decompilation is - we won't try to argue about it in this document and simply tell you how to do it.
 
 ## Requirements
 
@@ -63,7 +63,7 @@ function ModifySquadArray(out array<SpecialSquad> SquadArray)
     // [Loop Continue]
     goto J0x07;
   }
-  //return;  
+  //return;
 }
 ```
 
@@ -124,7 +124,7 @@ static function AddDefaultInventory(KFPlayerReplicationInfo KFPRI, Pawn P)
       KFHumanPawn(P).CreateInventoryVeterancy("CsHDMut.W_AK47AssaultRifle", default.StartingWeaponSellPriceLevel6);
     }
   }
-  //return;  
+  //return;
 }
 ```
 
@@ -172,4 +172,4 @@ Just check variable definitions in VSCode if you have any difficulties.
 
 ## Notable Mention
 
-There are few decompilation guides around, but one of the KF orientated ones in [kazachidla's](http://steamcommunity.com/profiles/76561198012931650) **UT Package Tool** [guide](https://steamcommunity.com/sharedfiles/filedetails/?id=314459304).
+There are few decompilation guides around, but one of the KF orientated ones is [kazachidla's](http://steamcommunity.com/profiles/76561198012931650) **UT Package Tool** [guide](https://steamcommunity.com/sharedfiles/filedetails/?id=314459304).

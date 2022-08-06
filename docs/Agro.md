@@ -7,7 +7,7 @@
 - **Kiting** - play style that involves moving around the map in organized, well thought circles.
 - **Camping** - play style that involves holding the ground aka standing and chilling in any spot.
 
-## Genaral Information
+## General Information
 
 You can divide KF playerbase into 2 groups:
 
