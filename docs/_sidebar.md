@@ -18,3 +18,4 @@
 
 * **Unreal Script**
   * [Stripped Mods Decompilation](../UnrealScript/Decompilation.md)
+  * [Profiling](../UnrealScript/Profiling.md)
