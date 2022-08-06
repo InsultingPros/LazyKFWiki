@@ -142,7 +142,6 @@
         '/.*/_sidebar.md': '/_sidebar.md',
         '/.*/_navbar.md': '/_navbar.md',
       },
-      coverpage: window.localStorage.hideCoverpage !== 'true',
       // mergeNavbar: true,
       relativePath: true,
       executeScript: true,
@@ -174,17 +173,6 @@
             var selector = Docsify.dom.find('#theme-selector');
             selector.onclick = function(e) {
               setTheme(e.target.dataset.theme);
-            };
-          });
-        },
-        // Power the splash hider.
-        function (hook, vm) {
-          hook.doneEach(function () {
-            var checkbox = Docsify.dom.find('#hide-coverpage');
-            if (!checkbox) return;
-            checkbox.onclick = function (e) {
-              window.localStorage.hideCoverpage = checkbox.checked;
-              location.reload(); // Kludge to hide the cover page.
             };
           });
         },
