@@ -55,6 +55,6 @@ If you want to automate most actions (move files between client-server, auto cre
 
 You can use whatever editor you like, but these have working unreal script extensions, and they make your coding experience much better:
 
-- [**VSCode**](https://code.visualstudio.com/) with [Eliot's UnrealScript extension](https://marketplace.visualstudio.com/items?itemName=EliotVU.uc).
+- [**VSCode**](https://code.visualstudio.com/) with [Eliot's UnrealScript extension](https://marketplace.visualstudio.com/items?itemName=EliotVU.uc) / [unrealscript snippet](https://github.com/InsultingPros/LazyKFWiki/blob/main/docs/_content/unrealscript.json).
 - [**SublimeText**](https://www.sublimetext.com/) with [UnrealScriptIDE extension](https://packagecontrol.io/packages/UnrealScriptIDE).
 - [**Notepad++**](https://notepad-plus-plus.org/) with [UDL1](https://gist.github.com/khasky/9bcbf0cfc7594a38e5206ae0b702c061) / [UDL2](https://romerounrealscript.blogspot.com/2011/10/setting-up-notepad-for-unrealscript.html) ([how to install UDL](https://npp-user-manual.org/docs/user-defined-language-system/)).
