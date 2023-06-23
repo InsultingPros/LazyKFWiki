@@ -1,4 +1,4 @@
-!> This list is for people who understand what is a binary file, what is a directory, how to differentiate files with different extensions, how to download and copy-paste files into game's folder, etc.
+!> This list is for people with minimal technical knowledge (what is a binary file, what is a directory, how to differentiate files with different extensions, how to download and copy-paste files into game's folder, etc.), who want to make mutators and don't know from where to start.
 
 ## Essentials
 
@@ -21,7 +21,7 @@ Viewing binaries and file structures:
 
 File operations:
 
-- [**UZ2 Tool**](https://www.moddb.com/games/killing-floor/downloads/kftools-uz2) - especially handy when you create clientside mods, and you provide redirect files (`*.uz2`) for your users. Allows you to drag-n-drop directories and files for quick compression.
+- [KFRedirectTool](https://github.com/InsultingPros/KFRedirectTool) - especially handy when you create clientside mods, and you want to provide redirect files (`*.uz2`) for your admin users.
 - [**KF Cache Extractor**](https://github.com/InsultingPros/LazyKFWiki/blob/main/docs/_content/KFCacheExtractor.exe) - [jaek](https://forums.tripwireinteractive.com/index.php?members/jaek.14402/)'s modification of ut2004 CacheExtractor. Put it inside game's main directory. Allows to easily rip files from cache and then check them in UE Explorer, decompile, whatever.
 
 Debug:
@@ -51,10 +51,8 @@ If you want to automate most actions (move files between client-server, auto cre
 
 ## Editors
 
-!> VSCode is the most feature rich and stable variant. And it has lots of extensions that other editors lack.
+You can use whatever editor you like, even plain notepad. But if you want to have smooth coding experience, check these ones:
 
-You can use whatever editor you like, but these have working unreal script extensions, and they make your coding experience much better:
-
-- [**VSCode**](https://code.visualstudio.com/) with [Eliot's UnrealScript extension](https://marketplace.visualstudio.com/items?itemName=EliotVU.uc) / [unrealscript snippet](https://github.com/InsultingPros/LazyKFWiki/blob/main/docs/_content/unrealscript.json).
-- [**SublimeText**](https://www.sublimetext.com/) with [UnrealScriptIDE extension](https://packagecontrol.io/packages/UnrealScriptIDE).
-- [**Notepad++**](https://notepad-plus-plus.org/) with [UDL1](https://gist.github.com/khasky/9bcbf0cfc7594a38e5206ae0b702c061) / [UDL2](https://romerounrealscript.blogspot.com/2011/10/setting-up-notepad-for-unrealscript.html) ([how to install UDL](https://npp-user-manual.org/docs/user-defined-language-system/)).
+- [**VSCode**](https://code.visualstudio.com/) with Eliot's [UnrealScript](https://marketplace.visualstudio.com/items?itemName=EliotVU.uc) extension. Has the most [features](https://github.com/EliotVU/UnrealScript-Language-Service#features) among all available options and is the most stable.
+- [**SublimeText**](https://www.sublimetext.com/) with [UnrealScriptIDE](https://packagecontrol.io/packages/UnrealScriptIDE) extension.
+- [**Notepad++**](https://notepad-plus-plus.org/) with [UDL (khasky)](https://web.archive.org/web/20221005032637/https://gist.github.com/khasky/9bcbf0cfc7594a38e5206ae0b702c061) / [UDL (Romero)](https://romerounrealscript.blogspot.com/2011/10/setting-up-notepad-for-unrealscript.html). Check the [UDL installation guide](https://npp-user-manual.org/docs/user-defined-language-system/).
