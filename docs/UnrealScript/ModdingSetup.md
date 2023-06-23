@@ -1,4 +1,4 @@
-!> This list is for people with minimal technical knowledge (what is a binary file, what is a directory, how to differentiate files with different extensions, how to download and copy-paste files into game's folder, etc.), who want to make mutators and don't know from where to start.
+!> This mini-guide is intended for individuals who possess a solid understanding of concepts such as binary files, directories, distinguishing files with varying extensions, as well as the ability to download and copy-paste files into a game's folder. It aims to provide a starting point for those interested in creating mutators but unsure of where to begin.
 
 ## Essentials
 
