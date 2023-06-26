@@ -1,4 +1,4 @@
-!> In case of a fuckup you can wipe your configs and restore them from "..\Your KF Dir\System\": [Default.ini](https://github.com/InsultingPros/LazyKFWiki/tree/main/docs/_content/Default.ini) and [defuser.ini](https://github.com/InsultingPros/LazyKFWiki/tree/main/docs/_content/defuser.ini).
+!> In case of a fuckup you can wipe your configs and restore them from "..\Your KF Dir\System\": [Default.ini](https://github.com/InsultingPros/LazyKFWiki/releases/download/1.0.0/Default.ini) and [defuser.ini](https://github.com/InsultingPros/LazyKFWiki/releases/download/1.0.0/defuser.ini).
 
 A collection of edits for my user configs.
 

@@ -22,11 +22,11 @@ Viewing binaries and file structures:
 File operations:
 
 - [KFRedirectTool](https://github.com/InsultingPros/KFRedirectTool) - especially handy when you create clientside mods, and you want to provide redirect files (`*.uz2`) for your admin users.
-- [**KF Cache Extractor**](https://github.com/InsultingPros/LazyKFWiki/blob/main/docs/_content/KFCacheExtractor.exe) - [jaek](https://forums.tripwireinteractive.com/index.php?members/jaek.14402/)'s modification of ut2004 CacheExtractor. Put it inside game's main directory. Allows to easily rip files from cache and then check them in UE Explorer, decompile, whatever.
+- [**KF Cache Extractor**](https://github.com/InsultingPros/LazyKFWiki/releases/download/1.0.0/KFCacheExtractor.exe) - [jaek](https://forums.tripwireinteractive.com/index.php?members/jaek.14402/)'s modification of ut2004 CacheExtractor. Put it inside game's main directory. Allows to easily rip files from cache and then check them in UE Explorer, decompile, whatever.
 
 Debug:
 
-- [**ueScriptProfiler.exe**](https://github.com/InsultingPros/LazyKFWiki/blob/main/docs/_content/ueScriptProfiler.exe): Script profiler binary. If you want to [find bottlenecks](../UnrealScript/Profiling.md) in your code this tool is the ultimate solution.
+- [**ueScriptProfiler.exe**](https://github.com/InsultingPros/LazyKFWiki/releases/download/1.0.0/ueScriptProfiler.exe): Script profiler binary. If you want to [find bottlenecks](../UnrealScript/Profiling.md) in your code this tool is the ultimate solution.
 
 ## Compilation Scripts
 

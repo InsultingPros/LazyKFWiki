@@ -46,8 +46,8 @@ This profiling utility will become your best friend for finding performance bott
 
 Have fun!
 
-- [**ut2004.uprof**](https://github.com/InsultingPros/LazyKFWiki/blob/main/docs/_content/ut2004.uprof): Sample script profiling output from UT2004.
-- [**ueScriptProfiler.exe**](https://github.com/InsultingPros/LazyKFWiki/blob/main/docs/_content/ueScriptProfiler.exe): Script profiler binary.
+- [**ut2004.uprof**](https://github.com/InsultingPros/LazyKFWiki/releases/download/1.0.0/ut2004.uprof): Sample script profiling output from UT2004.
+- [**ueScriptProfiler.exe**](https://github.com/InsultingPros/LazyKFWiki/releases/download/1.0.0/ueScriptProfiler.exe): Script profiler binary.
 
 ## Source
 
