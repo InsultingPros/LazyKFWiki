@@ -12,7 +12,7 @@
 [submission thread]: https://forums.tripwireinteractive.com/index.php?threads/kf-mutator-whitelist-and-fix-submission-thread.94259/
 [submission old thread]: https://forums.tripwireinteractive.com/index.php?threads/kf-whitelist-mutator-suggestion-list.34001/
 
-!> The moment you play with greylisted mod, your stat gaining stops. You need to **restart** the game to fix it.
+?> The moment you play with greylisted mod, your stat gaining stops. You need to **restart** the game to fix it.
 
 ## Glossary
 
